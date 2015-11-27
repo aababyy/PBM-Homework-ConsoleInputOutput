@@ -1,0 +1,15 @@
+using System;
+
+class CirclePerimeterAndArea
+{
+    static void Main()
+    {
+        double pi = 3.141592653589793;
+        Console.Write("Enter the RADIUS of a circle, please: ");
+        double radius = double.Parse(Console.ReadLine());
+        double perimeter = 2 * pi * radius;
+        double area = pi * radius * radius;
+        Console.WriteLine("Perimeter:\t{0:0.00}", perimeter);
+        Console.WriteLine("Area:\t\t{0:0.00}", area);
+    }
+}
