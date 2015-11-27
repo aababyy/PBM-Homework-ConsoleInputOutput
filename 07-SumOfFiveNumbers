@@ -1,0 +1,47 @@
+using System;
+using System.Linq;
+
+class SumOfFiveNumbers
+{
+    static void Main()
+    {
+        //Version 1
+        string[] numbers1 = Console.ReadLine().Split(' ');
+
+        double n1 = double.Parse(numbers1[0]);
+        double n2 = double.Parse(numbers1[1]);
+        double n3 = double.Parse(numbers1[2]);
+        double n4 = double.Parse(numbers1[3]);
+        double n5 = double.Parse(numbers1[4]);
+
+        double sum1 = n1 + n2 + n3 + n4 + n5;
+        Console.WriteLine("sum1 = " + sum1);
+
+        //Version 2
+        string[] numbers2 = Console.ReadLine().Split(' ');
+        double sum2 = 0;
+        for (int i = 0; i < numbers2.Length; i++)
+        {
+            sum2 += double.Parse(numbers2[i]);
+        }
+        Console.WriteLine("sum2 = " + sum2);
+
+        //Version 3
+        string[] numbers3 = Console.ReadLine().Split(' ');
+        double sum3 = 0;
+        foreach (string s in numbers3)
+        {
+            sum3 += double.Parse(s);
+        }
+        Console.WriteLine("sum3 = " + sum3);
+
+        //Version 4
+        double[] numbers4 = Console.ReadLine().Split().Select(double.Parse).ToArray();
+        double sum4 = numbers4.Sum();
+        Console.WriteLine("sum4 = " + sum4);
+
+        //Version 5
+        double[] numbers5 = Console.ReadLine().Split().Select(double.Parse).ToArray();
+        Console.WriteLine("sum5 = " + numbers5.Sum());
+    }
+}
