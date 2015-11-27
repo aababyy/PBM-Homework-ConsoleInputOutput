@@ -1,0 +1,18 @@
+using System;
+
+class SumOfThreeNumbers
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter the FIRST REAL NUMBER, please");
+        double number1 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter the SECOND REAL NUMBER, please");
+        double number2 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter the THIRD REAL NUMBER, please");
+        double number3 = double.Parse(Console.ReadLine());
+
+        Console.WriteLine(number1 + " + " + number2 + " + " + number3 + " = " + (number1 + number2 + number3));
+    }
+}
