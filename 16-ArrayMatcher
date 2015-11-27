@@ -1,0 +1,63 @@
+using System;
+
+class ArrayMatcher
+{
+    static void Main()
+    {
+        string[] input = Console.ReadLine().Split('\\');
+        string str1 = input[0];
+        string str2 = input[1];
+        string com = input[2];
+        string result = "";
+
+        if (com.Equals("join"))
+        {
+            for (int i = 0; i < str1.Length; i++)
+            {
+                for (int j = 0; j < str2.Length; j++)
+                {
+                    if (str1[i].Equals(str2[j]))
+                    {
+                        result = result + str1[i];
+                    }
+                }
+            }
+        }
+        else if (com.Equals("right exclude"))
+        {
+            for (int i = 0; i < str1.Length; i++)
+            {
+                if (!str2.Contains(str1[i].ToString()))
+                {
+                    result = result + str1[i];
+                }
+            }
+        }
+        else //if (com.Equals("left exclude"))
+        {
+            for (int i = 0; i < str2.Length; i++)
+            {
+                if (!str1.Contains(str2[i].ToString()))
+                {
+                    result = result + str2[i];
+                }
+            }
+        }
+        char[] array = result.ToCharArray();
+        Array.Sort(array);
+
+        //Printing OUTPUT Version1
+        Console.WriteLine(String.Join("", array));
+
+        //Printing OUTPUT Version2
+        foreach (char c in array)
+        {
+            Console.Write(c);
+        }
+        Console.WriteLine();
+
+        //Printing OUTPUT Version3
+        result = new string(array);
+        Console.WriteLine(result);
+    }
+}
