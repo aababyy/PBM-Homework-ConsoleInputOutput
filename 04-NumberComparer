@@ -1,0 +1,15 @@
+using System;
+
+class NumberComparer
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter the first number to compare, please");
+        double a = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("Enter the second number to compare, please");
+        double b = double.Parse(Console.ReadLine());
+
+        Console.WriteLine("The greater number is " + Math.Max(a, b));
+    }
+}
