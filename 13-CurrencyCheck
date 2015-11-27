@@ -1,0 +1,17 @@
+using System;
+//using System.Linq;
+
+class CurrencyCheck
+{
+    static void Main()
+    {
+        decimal r = ((decimal)uint.Parse(Console.ReadLine()) / 100) * (decimal)3.5;
+        decimal d = (decimal)uint.Parse(Console.ReadLine()) * (decimal)1.5;
+        decimal e = (decimal)uint.Parse(Console.ReadLine()) * (decimal)1.95;
+        decimal b = (decimal)uint.Parse(Console.ReadLine()) / 2;
+        decimal m = (decimal)uint.Parse(Console.ReadLine());
+        //decimal[] prices = new decimal[] { r, d, e, b, m };
+        //Console.WriteLine("{0:0.00}", prices.Min());
+        Console.WriteLine("{0:0.00}", Math.Min(r, Math.Min(d, Math.Min(e, Math.Min(b, m)))));
+    }
+}
