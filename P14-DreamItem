@@ -1,0 +1,50 @@
+using System;
+
+class DreamItem
+{
+    static void Main()
+    {
+        string[] input = Console.ReadLine().Split('\\');
+        string month = input[0];
+        decimal moneyPerHour = decimal.Parse(input[1]);
+        int hoursPerDay = int.Parse(input[2]);
+        decimal price = decimal.Parse(input[3]);
+        int workingDays = 0;
+
+        switch (month)
+        {
+            case "Jan":
+            case "Mar":
+            case "March":
+            case "May":
+            case "July":
+            case "Aug":
+            case "Oct":
+            case "Dec":
+                workingDays = 31 - 10; break;
+            case "Apr":
+            case "June":
+            case "Sept":
+            case "Nov":
+                workingDays = 30 - 10; break;
+            case "Feb":
+                workingDays = 28 - 10; break;
+            default: break;
+        }
+
+        decimal moneyPerMonth = workingDays * hoursPerDay * moneyPerHour;
+        if (moneyPerMonth > 700)
+        {
+            moneyPerMonth += moneyPerMonth / 10;
+        }
+
+        if (moneyPerMonth >= price)
+        {
+            Console.WriteLine("Money left = {0:F2} leva.", moneyPerMonth - price);
+        }
+        else
+        {
+            Console.WriteLine("Not enough money. {0:F2} leva needed.", price - moneyPerMonth);
+        }
+    }
+}
