@@ -1,0 +1,71 @@
+using System;
+
+class PrintCompanyInformation
+{
+    static void Main()
+    {
+        Console.Write("Company name: ");
+        string cName = Console.ReadLine();
+        Console.Write("Company address: ");
+        string cAddress = Console.ReadLine();
+        Console.Write("Phone number: ");
+        string cPhone = Console.ReadLine();
+        Console.Write("Fax number: ");
+        string cFax = Console.ReadLine();
+        Console.Write("Web site: ");
+        string cWebSite = Console.ReadLine();
+        Console.Write("Manager first name: ");
+        string mFirstName = Console.ReadLine();
+        Console.Write("Manager last name: ");
+        string mLastName = Console.ReadLine();
+        Console.Write("Manager age: ");
+        string mAge = Console.ReadLine();
+        Console.Write("Manager phone: ");
+        string mPhone = Console.ReadLine();
+
+        if (cName == "")
+        {
+            cName = "(no name)";
+        }
+        if (cAddress == "")
+        {
+            cAddress = "(no address)";
+        }
+        if (cPhone == "")
+        {
+            cPhone = "(no phone)";
+        }
+        if (cFax == "")
+        {
+            cFax = "(no fax)";
+        }
+        if (cWebSite == "")
+        {
+            cWebSite = "(no web site)";
+        }
+        if (mFirstName == "")
+        {
+            mFirstName = "(no first name)";
+        }
+        if (mLastName == "")
+        {
+            mLastName = "(no last name)";
+        }
+        if (mAge == "")
+        {
+            mAge = "(no age)";
+        }
+        if (mPhone == "")
+        {
+            mPhone = "(no phone)";
+        }
+
+        Console.WriteLine();
+        Console.WriteLine(cName);
+        Console.WriteLine("Address: " + cAddress);
+        Console.WriteLine("Tel. " + cPhone);
+        Console.WriteLine("Fax: " + cFax);
+        Console.WriteLine("Web site: " + cWebSite);
+        Console.WriteLine("Manager: " + mFirstName + " " + mLastName + " (age: " + mAge + ", tel. " + mPhone + ")");
+    }
+}
