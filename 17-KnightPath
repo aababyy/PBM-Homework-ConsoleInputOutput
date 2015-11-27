@@ -1,0 +1,93 @@
+using System;
+
+class KnightPath
+{
+    static void Main()
+    {
+        string line = Console.ReadLine();
+        int[,] board = new int[8, 8];
+        int[] pos = {0, 7};
+        board[pos[0], pos[1]] = 1;
+        int[] newPos = new int[2];
+        while (!line.Equals("stop"))
+        {
+            switch (line)
+            {
+                case "left up":
+                    newPos[0] = pos[0] - 1;
+                    newPos[1] = pos[1] - 2;
+                    break;
+                case "left down":
+                    newPos[0] = pos[0] + 1;
+                    newPos[1] = pos[1] - 2;
+                    break;
+                case "right up":
+                    newPos[0] = pos[0] - 1;
+                    newPos[1] = pos[1] + 2;
+                    break;
+                case "right down":
+                    newPos[0] = pos[0] + 1;
+                    newPos[1] = pos[1] + 2;
+                    break;
+                case "up left":
+                    newPos[0] = pos[0] - 2;
+                    newPos[1] = pos[1] - 1;
+                    break;
+                case "up right":
+                    newPos[0] = pos[0] - 2;
+                    newPos[1] = pos[1] + 1;
+                    break;
+                case "down left":
+                    newPos[0] = pos[0] + 2;
+                    newPos[1] = pos[1] - 1;
+                    break;
+                case "down right":
+                    newPos[0] = pos[0] + 2;
+                    newPos[1] = pos[1] + 1;
+                    break;
+                default: break;
+            }
+
+            if (newPos[0] >= 0 && newPos[0] <= 7 && newPos[1] >= 0 && newPos[1] <= 7)
+            {
+                pos[0] = newPos[0];
+                pos[1] = newPos[1];
+
+                if (board[pos[0], pos[1]] == 0)
+                {
+                    board[pos[0], pos[1]] = 1;
+                }
+                else
+                {
+                    board[pos[0], pos[1]] = 0;
+                }
+            }
+            else
+            {
+                newPos[0] = pos[0];
+                newPos[1] = pos[1];
+            }
+
+            line = Console.ReadLine();
+        }
+
+        bool isBoardEmpty = true;
+        for (int i = 0; i < 8; i++)
+        {
+            string output = "";
+            for (int j = 0; j < 8; j++)
+            {
+                output = output + board[i, j];
+            }
+            if (output.Contains("1"))
+            {
+                isBoardEmpty = false;
+                Console.WriteLine(Convert.ToInt32(output, 2).ToString());
+            }
+        }
+        if (isBoardEmpty)
+        {
+            Console.WriteLine("[Board is empty]");
+        }
+    }
+}
