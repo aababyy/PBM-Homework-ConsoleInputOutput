@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _10.Employee_Data
+{
+    class EmployeeData
+    {
+        static void Main()
+        {
+            //string FirstName, LastName;
+            //byte age;
+            //char Gender;
+            //int IDNumber;
+            //ushort UniqueEmpNumber; // when you need to record this data in the database you can add this number to 27560000. 
+                                    //See example below.
+
+            Console.Write("Enter your [First Name]: ");
+            string FirstName = Console.ReadLine();
+
+            Console.Write("Enter your [Last Name]: ");
+            string LastName = Console.ReadLine();
+           
+            Console.Write("Enter your [Age]: ");
+            byte age = byte.Parse(Console.ReadLine());
+            
+            Console.Write("Enter your Gender [m/f]: ");
+            string Gender = Console.ReadLine();
+
+            bool isF = Gender.Equals("f", StringComparison.OrdinalIgnoreCase);
+            bool isM = Gender.Equals("m", StringComparison.OrdinalIgnoreCase);
+
+            Console.SetCursorPosition(30, 3); // Поставя курсора на четвъртия ред, трийста позиция - броят се от 0.
+            Console.WriteLine(isF ? "OK!" : isM ? "OK!" : "Incorrect input data!"); // как "ОК!" да се изпише на същия ред, на който даваме отговора?
+
+            Console.Write("Enter your [Personal ID Number]: ");
+            ulong IDNumber = ulong.Parse(Console.ReadLine());
+
+            Console.Write("Enter your [Unique Employee Number]: ");
+            uint UniqueEmpNumber = uint.Parse(Console.ReadLine());
+            
+            Console.WriteLine();
+            Console.WriteLine("Personal Information about {0} {1}: \n\n First Name: {0} \n Last Name: {1} \n Age: {2} \n Gender: {3} \n ID Number: {4} \n Unique Employee Number: {5} \n",
+                FirstName, LastName, age, Gender, IDNumber, 27560000 + UniqueEmpNumber);
+        }
+    }
+}
